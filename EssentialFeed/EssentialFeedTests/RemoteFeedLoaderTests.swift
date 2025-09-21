@@ -214,7 +214,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         
         func complete(
             withError error: Error,
-            at index: Int = 0
+            atIndex index: Int = 0
         ) {
             messages[index].completion(.failure(error))
         }
