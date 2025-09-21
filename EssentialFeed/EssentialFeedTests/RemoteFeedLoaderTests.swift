@@ -67,6 +67,7 @@ class RemoteFeedLoaderTests: XCTestCase {
                 when: {
                     client.complete(
                         withStatusCode: statusCode,
+                        data: makeItemsJSON([]), 
                         atIndex: index
                     )
                 }
@@ -224,7 +225,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         
         func complete(
             withStatusCode statusCode: Int,
-            data: Data = Data(),
+            data: Data,
             atIndex index: Int = 0
         ) {
             let response = HTTPURLResponse(
