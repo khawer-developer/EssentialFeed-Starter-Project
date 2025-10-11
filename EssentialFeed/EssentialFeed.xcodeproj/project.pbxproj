@@ -14,6 +14,7 @@
 		700350332E89687800BAC1B5 /* FeedItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700350322E89687800BAC1B5 /* FeedItemsMapper.swift */; };
 		700C7FBE2E77013D00DC9B6B /* RemoteFeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C7FBD2E77013D00DC9B6B /* RemoteFeedLoaderTests.swift */; };
 		700C7FC12E77277600DC9B6B /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C7FC02E77277600DC9B6B /* RemoteFeedLoader.swift */; };
+		707A05B82E9ACC130097211F /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707A05B72E9ACC130097211F /* URLSessionHTTPClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		700350322E89687800BAC1B5 /* FeedItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemsMapper.swift; sourceTree = "<group>"; };
 		700C7FBD2E77013D00DC9B6B /* RemoteFeedLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoaderTests.swift; sourceTree = "<group>"; };
 		700C7FC02E77277600DC9B6B /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
+		707A05B72E9ACC130097211F /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				700C7FBD2E77013D00DC9B6B /* RemoteFeedLoaderTests.swift */,
+				707A05B72E9ACC130097211F /* URLSessionHTTPClientTests.swift */,
 			);
 			path = FeedAPITests;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				700C7FBE2E77013D00DC9B6B /* RemoteFeedLoaderTests.swift in Sources */,
+				707A05B82E9ACC130097211F /* URLSessionHTTPClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
