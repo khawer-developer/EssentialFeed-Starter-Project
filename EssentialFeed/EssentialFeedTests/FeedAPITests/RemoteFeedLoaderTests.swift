@@ -49,7 +49,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         
         expect(
             sut,
-            toCompleteWithResult: .failure(.connectivity),
+            toCompleteWithResult: .failure(RemoteFeedLoader.Error.connectivity),
             when: {
                 client.complete(withError: clientError)
             }
@@ -63,7 +63,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         statusCodes.enumerated().forEach { index, statusCode in
             expect(
                 sut,
-                toCompleteWithResult: .failure(.invalidData),
+                toCompleteWithResult: .failure(RemoteFeedLoader.Error.invalidData),
                 when: {
                     client.complete(
                         withStatusCode: statusCode,
@@ -81,7 +81,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         
         expect(
             sut,
-            toCompleteWithResult: .failure(.invalidData),
+            toCompleteWithResult: .failure(RemoteFeedLoader.Error.invalidData),
             when: {
                 client.complete(
                     withStatusCode: 200,
@@ -242,7 +242,7 @@ class RemoteFeedLoaderTests: XCTestCase {
                     file: file,
                     line: line
                 )
-            case let (.failure(receivedError), .failure(expectedError)):
+            case let (.failure(receivedError as RemoteFeedLoader.Error), .failure(expectedError as RemoteFeedLoader.Error)):
                 XCTAssertEqual(
                     receivedError,
                     expectedError,
