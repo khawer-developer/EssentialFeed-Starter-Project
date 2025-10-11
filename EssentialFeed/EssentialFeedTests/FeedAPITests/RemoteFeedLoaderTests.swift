@@ -49,7 +49,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         
         expect(
             sut,
-            toCompleteWithResult: .failure(RemoteFeedLoader.Error.connectivity),
+            toCompleteWithResult: failure(.connectivity),
             when: {
                 client.complete(withError: clientError)
             }
@@ -63,7 +63,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         statusCodes.enumerated().forEach { index, statusCode in
             expect(
                 sut,
-                toCompleteWithResult: .failure(RemoteFeedLoader.Error.invalidData),
+                toCompleteWithResult: failure(.invalidData),
                 when: {
                     client.complete(
                         withStatusCode: statusCode,
@@ -81,7 +81,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         
         expect(
             sut,
-            toCompleteWithResult: .failure(RemoteFeedLoader.Error.invalidData),
+            toCompleteWithResult: failure(.invalidData),
             when: {
                 client.complete(
                     withStatusCode: 200,
@@ -182,6 +182,10 @@ class RemoteFeedLoaderTests: XCTestCase {
             file: file,
             line: line)
         return (sut, client)
+    }
+    
+    private func failure(_ error: RemoteFeedLoader.Error) -> RemoteFeedLoader.Result {
+        .failure(error)
     }
     
     private func testForMemoryLeaks(
